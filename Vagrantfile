@@ -26,8 +26,8 @@ Vagrant.configure(2) do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "setRepo",type:"shell", inline: "wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo",privileged: true
-  #config.vm.provision "installZabbix",type:"shell", path: "build.sh", privileged: true
-  #config.vm.provision "installGrafana",type:"shell",  path: "build2.sh"
+  config.vm.provision "installZabbix",type:"shell", path: "build.sh"
+  config.vm.provision "installGrafana",type:"shell",  path: "build2.sh"
 =begin
   config.vm.post_up_message="
 ========================================================================

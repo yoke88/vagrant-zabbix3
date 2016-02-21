@@ -1,4 +1,7 @@
 #! /bin/sh
+
+sudo timedatectl set-timezone Asia/Shanghai
+
 if [ ! -s /etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX ] ; then
   sudo cp /vagrant/config/RPM-GPG-KEY-ZABBIX /etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX
 fi
@@ -11,6 +14,9 @@ fi
 
 sudo yum install net-snmp-utils mariadb-server mariadb fping libssh2 zabbix-server-mysql zabbix-frontend-php zabbix-web-mysql zabbix-agent zabbix-get zabbix-sender  -y
 
+
+sudo chown root:zabbix /usr/sbin/fping
+sudo chmod ug+s /usr/sbin/fping
 sudo mv /etc/my.cnf /etc/my.cnf.ori
 sudo cp /vagrant/config/my.cnf /etc/my.cnf
 
@@ -34,12 +40,15 @@ cd /usr/share/doc/zabbix-server-mysql-3.0.0
 zcat create.sql.gz | mysql -uzabbix -pzabbix zabbix
 
 
-sed -i 's/# DBPassword=/DBPassword=topsecret/g' /etc/zabbix_server.conf
+sudo sed -i 's/# DBPassword=/DBPassword=zabbix/g' /etc/zabbix/zabbix_server.conf
+sudo systemctl enable zabbix-server
 sudo systemctl start zabbix-server
 
 
 #httpd
-sed -i 's/# php_value date.timezone Europe\/Riga/php_value date.timezone Asia\/Chongqing/g' /etc/httpd/conf.d/zabbix.conf
+sudo sed -i 's|# php_value date.timezone Europe/Riga|php_value date.timezone Asia/Chongqing|g' /etc/httpd/conf.d/zabbix.conf
+sudo sed -i 's|Alias /zabbix /usr/share/zabbix|DocumentRoot /usr/share/zabbix|g' /etc/httpd/conf.d/zabbix.conf
+sudo cp /vagrant/config/zabbix.conf.php  /etc/zabbix/web/zabbix.conf.php
 sudo systemctl start httpd.service
 sudo systemctl enable httpd.service
 
@@ -50,7 +59,7 @@ sudo systemctl enable zabbix-agent
 
 
 #firewall settings
-
+sudo systemctl start firewalld
 sudo firewall-cmd --permanent --add-port=10050/tcp
 sudo firewall-cmd --permanent --add-port=10051/tcp
 sudo firewall-cmd --permanent --add-port=80/tcp
