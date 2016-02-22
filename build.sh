@@ -2,10 +2,6 @@
 
 sudo timedatectl set-timezone Asia/Shanghai
 
-if [ ! -s /etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX ] ; then
-  sudo cp /vagrant/config/RPM-GPG-KEY-ZABBIX /etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX
-fi
-
 
 # beacause the network issues in china , change zabbix repo to aliyun
 if [ ! -s /etc/yum.repos.d/zabbix.repo ] ; then

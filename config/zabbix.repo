@@ -9,5 +9,5 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX
 name=Zabbix Official Repository non-supported - $basearch
 baseurl=http://mirrors.aliyun.com/zabbix/non-supported/rhel/7/$basearch/
 enabled=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX
+gpgkey=http://mirrors.aliyun.com/zabbix/RPM-GPG-KEY-ZABBIX
 gpgcheck=1
