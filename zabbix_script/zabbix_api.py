@@ -1,4 +1,4 @@
-﻿# This is a port of the ruby zabbix api found here:
+# This is a port of the ruby zabbix api found here:
 # http://trac.red-tux.net/browser/ruby/api/zbx_api.rb
 #
 #LGPL 2.1   http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
