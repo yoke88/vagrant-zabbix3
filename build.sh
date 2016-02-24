@@ -49,6 +49,13 @@ sudo systemctl start httpd.service
 sudo systemctl enable httpd.service
 
 # zabbix agent config
+
+# add mysql client configure for zabbix client to monitor mysql.you need link mysql app template to zabbix_server to enable mysql monitor
+sudo mkdir /var/lib/zabbix
+sudo cp /vagrant/config/.my.cnf /var/lib/zabbix/
+sudo chown -R zabbix:zabbix /var/lib/zabbix
+
+
 sudo sed -i "s/Hostname=Zabbix server/Hostname=`hostname`/" /etc/zabbix/zabbix_agentd.conf
 sudo systemctl start zabbix-agent
 sudo systemctl enable zabbix-agent

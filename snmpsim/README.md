@@ -41,4 +41,7 @@
     1. [烂泥：使用snmpwalk采集设备的OID信息](http://www.ilanni.com/?p=8408)  
     2. [SNMP v1，v2，v3 的比较](http://blog.163.com/fan_yishan/blog/static/4769221320091029197400/)
     3. [Producing SNMP snapshots](http://snmpsim.sourceforge.net/snapshotting.html)  
-    
+
+    ### 该目录文件说明
+    1. 使用01_installsnmpsim.sh 安装snmpsim
+    2. 使用02_start_snmpsim_with_multi_ip.sh 来模拟在多个IP模拟snmp设备，后台运行后会列出监听的IP和端口，默认community 是public.

@@ -1,0 +1,1277 @@
+{
+  "id": 1,
+  "title": "grafana-zabbix.org",
+  "originalTitle": "grafana-zabbix.org",
+  "tags": [
+    "zabbix",
+    "dashboard"
+  ],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": false,
+  "rows": [
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "100px",
+      "panels": [
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgb(16, 74, 72)",
+            "rgba(245, 150, 40, 0.73)",
+            "rgba(225, 40, 40, 0.59)"
+          ],
+          "datasource": null,
+          "decimals": 0,
+          "editable": true,
+          "error": false,
+          "format": "s",
+          "id": 4,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "alias": "cache",
+              "application": {
+                "name": "OS"
+              },
+              "column": "value",
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "function": "mean",
+              "group": {
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "host": {
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "$zabbix_server"
+              },
+              "item": {
+                "name": "System uptime"
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "title": "Host uptime",
+          "type": "singlestat",
+          "valueFontSize": "100%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgb(16, 74, 43)",
+            "rgba(245, 150, 40, 0.73)",
+            "rgba(225, 40, 40, 0.59)"
+          ],
+          "datasource": "grafana-zabbix.org",
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "id": 14,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": true,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "alias": "Number of processes",
+              "application": {
+                "name": "Processes"
+              },
+              "column": "value",
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "function": "mean",
+              "group": {
+                "name": "*",
+                "visible_name": "All"
+              },
+              "host": {
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "$zabbix_server"
+              },
+              "item": {
+                "name": "Number of processes"
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "title": "Number of processes",
+          "type": "singlestat",
+          "valueFontSize": "100%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(21, 65, 87, 0)",
+            "rgba(172, 101, 20, 0.73)",
+            "rgba(225, 63, 40, 0.28)"
+          ],
+          "datasource": "grafana-zabbix.org",
+          "decimals": 2,
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "id": 6,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": true,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "alias": "Processor load",
+              "application": {
+                "applicationid": "27",
+                "name": "CPU"
+              },
+              "column": "value",
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "function": "mean",
+              "group": {
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "host": {
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "$zabbix_server"
+              },
+              "hostGroup": {
+                "groupid": "2",
+                "name": "Linux servers"
+              },
+              "item": {
+                "name": "Processor load (1 min average per core)"
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "0,1,5",
+          "title": "Processor load",
+          "type": "singlestat",
+          "valueFontSize": "100%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgb(216, 40, 24)",
+            "rgba(245, 150, 40, 0.73)",
+            "rgba(40, 225, 40, 0.59)"
+          ],
+          "datasource": "grafana-zabbix.org",
+          "decimals": 2,
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "id": 5,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "%",
+          "postfixFontSize": "70%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": true,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "alias": "Available memory",
+              "application": {
+                "name": "Memory"
+              },
+              "column": "value",
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "function": "mean",
+              "group": {
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "host": {
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "$zabbix_server"
+              },
+              "item": {
+                "name": "Available memory in %"
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "0,5,20",
+          "title": "Available memory in %",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(46, 221, 97, 0.85)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "datasource": "grafana-zabbix.org",
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "height": "",
+          "id": 3,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": true,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "alias": "Values processed/Second",
+              "application": {
+                "name": "*",
+                "visible_name": "All"
+              },
+              "column": "value",
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "function": "mean",
+              "group": {
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "host": {
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "$zabbix_server"
+              },
+              "item": {
+                "name": "Values processed by Zabbix server per second"
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "title": "processed values/second",
+          "type": "singlestat",
+          "valueFontSize": "100%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "",
+              "value": ""
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(20, 92, 71, 0.85)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "datasource": "grafana-zabbix.org",
+          "decimals": 0,
+          "editable": true,
+          "error": false,
+          "format": "bytes",
+          "height": "",
+          "id": 15,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "30%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "alias": "Free disk space on /",
+              "application": {
+                "name": "Filesystems"
+              },
+              "column": "value",
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "function": "mean",
+              "group": {
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "host": {
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "$zabbix_server"
+              },
+              "item": {
+                "name": "Free disk space on /"
+              },
+              "refId": "A"
+            }
+          ],
+          "thresholds": "",
+          "title": "Free disk space",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "",
+              "value": ""
+            }
+          ],
+          "valueName": "current"
+        }
+      ],
+      "title": "Singlestats"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {
+            "CPU idle time (avg1)": "#65C5DB",
+            "CPU iowait time": "#1F78C1",
+            "CPU iowait time (avg1)": "#1F78C1",
+            "CPU nice time (avg1)": "#B7DBAB",
+            "CPU steal time": "#70DBED",
+            "CPU system time (avg1)": "#BF1B00",
+            "CPU user time (avg1)": "#E5AC0E",
+            "idle": "#6ED0E0",
+            "iowait": "#1F78C1",
+            "system": "#BF1B00",
+            "user": "#E5AC0E"
+          },
+          "bars": false,
+          "datasource": "grafana-zabbix.org",
+          "editable": true,
+          "error": false,
+          "fill": 3,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "height": "",
+          "id": 1,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "maxDataPoints": "500",
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "CPU user time",
+              "color": "#CCA300"
+            },
+            {
+              "alias": "CPU system time",
+              "color": "#BF1B00"
+            }
+          ],
+          "span": 7,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "nice",
+              "application": {
+                "name": "*",
+                "visible_name": "All"
+              },
+              "column": "value",
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "function": "mean",
+              "group": {
+                "name": "*",
+                "visible_name": "All"
+              },
+              "host": {
+                "name": "$zabbix_server",
+                "templated": true
+              },
+              "hostGroup": {
+                "groupid": "2",
+                "name": "Linux servers"
+              },
+              "item": {
+                "name": "All"
+              },
+              "itemFilter": "^CPU(?!\\s(idle|nice))",
+              "refId": "A"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "CPU time",
+          "tooltip": {
+            "shared": true,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "percent",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {
+            "Available": "#9AC48A",
+            "Memory": "#7EB26D"
+          },
+          "bars": false,
+          "datasource": "grafana-zabbix.org",
+          "editable": true,
+          "error": false,
+          "fill": 2,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "height": "",
+          "id": 2,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "maxDataPoints": "300",
+          "nullPointMode": "null as zero",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 5,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Available memory",
+              "application": {
+                "name": "Memory"
+              },
+              "column": "value",
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "function": "mean",
+              "group": {
+                "name": "*",
+                "visible_name": "All"
+              },
+              "hide": false,
+              "host": {
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "$zabbix_server"
+              },
+              "item": {
+                "name": "Available memory"
+              },
+              "refId": "A"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Available memory",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "bytes",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {
+            "Processor load": "#1F78C1",
+            "Processor load (5 min average per core)": "#1F78C1"
+          },
+          "bars": false,
+          "datasource": "grafana-zabbix.org",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": true
+          },
+          "id": 13,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "maxDataPoints": "",
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Processor load (5 min average per core)",
+              "application": {
+                "name": "CPU"
+              },
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "group": {
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "host": {
+                "name": "$zabbix_server",
+                "templated": true
+              },
+              "item": {
+                "name": "Processor load (5 min average per core)"
+              },
+              "refId": "A"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Processor load",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {
+            "In": "#F4D598",
+            "Incoming traffic on interface eth0": "#447EBC",
+            "Out": "#1F78C1",
+            "undefined": "#CCA300"
+          },
+          "bars": false,
+          "datasource": "grafana-zabbix.org",
+          "editable": true,
+          "error": false,
+          "fill": 8,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 9,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "maxDataPoints": "300",
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "/In/",
+              "transform": "negative-Y"
+            }
+          ],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "In",
+              "application": {
+                "name": "Network interfaces"
+              },
+              "column": "value",
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "function": "mean",
+              "group": {
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "host": {
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "$zabbix_server"
+              },
+              "hostGroup": {
+                "groupid": "2",
+                "name": "Linux servers"
+              },
+              "item": {
+                "name": "Incoming network traffic on enp0s8"
+              },
+              "itemFilter": "",
+              "refId": "A",
+              "scale": ""
+            },
+            {
+              "alias": "Out",
+              "application": {
+                "name": "Network interfaces"
+              },
+              "column": "value",
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "function": "mean",
+              "group": {
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "host": {
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "$zabbix_server"
+              },
+              "hostGroup": {
+                "groupid": "2",
+                "name": "Linux servers"
+              },
+              "item": {
+                "name": "Incoming network traffic on enp0s8"
+              },
+              "refId": "B",
+              "scale": ""
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Network traffic",
+          "tooltip": {
+            "shared": true,
+            "value_type": "individual"
+          },
+          "transparent": false,
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "bps",
+            "none"
+          ]
+        }
+      ],
+      "showTitle": true,
+      "title": "Server performance"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {
+            "Processed values (per second)": "#967302",
+            "Required Zabbix performance (nvps)": "#1F78C1",
+            "Required performance of Zabbix server, new values per second": "#1F78C1",
+            "Values processed": "#967302",
+            "Values processed by Zabbix server per second": "#0A50A1",
+            "Zabbix busy poller process 5, in %": "#7EB26D",
+            "Zabbix busy poller processes, in %": "#F2C96D"
+          },
+          "bars": false,
+          "datasource": "grafana-zabbix.org",
+          "editable": true,
+          "error": false,
+          "fill": 3,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": 0,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": false
+          },
+          "id": 10,
+          "leftYAxisLabel": "Processed values",
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "maxDataPoints": "200",
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "rightYAxisLabel": "New values",
+          "seriesOverrides": [
+            {
+              "alias": "/Required/",
+              "fill": 0,
+              "yaxis": 2
+            }
+          ],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Values processed",
+              "application": {
+                "name": "Zabbix server"
+              },
+              "column": "value",
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "function": "mean",
+              "group": {
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "host": {
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "$zabbix_server"
+              },
+              "item": {
+                "name": "Values processed by Zabbix server per second"
+              },
+              "refId": "A"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Zabbix server performance",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {
+            "MySQL SELECT statements per second": "#1F78C1"
+          },
+          "bars": true,
+          "datasource": "grafana-zabbix.org",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 11,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": false,
+          "linewidth": 2,
+          "links": [],
+          "maxDataPoints": "20",
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "All",
+              "application": {
+                "name": "*",
+                "visible_name": "All"
+              },
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "group": {
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "host": {
+                "name": "$zabbix_server",
+                "templated": true
+              },
+              "item": {
+                "name": "All"
+              },
+              "itemFilter": "MySQL.* operations",
+              "refId": "A"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "MySQL queries",
+          "tooltip": {
+            "shared": true,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {
+            "Zabbix busy \"http poller\" processes, in %": "#447EBC",
+            "Zabbix busy \"icmp pinger\" processes, in %": "#CCA300"
+          },
+          "bars": false,
+          "datasource": "grafana-zabbix.org",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 12,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "maxDataPoints": "300",
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "All",
+              "application": {
+                "name": "*",
+                "visible_name": "All"
+              },
+              "downsampleFunction": {
+                "name": "avg",
+                "value": "avg"
+              },
+              "errors": {},
+              "group": {
+                "groupid": "4",
+                "name": "Zabbix servers"
+              },
+              "host": {
+                "host": "Zabbix server",
+                "hostid": "10084",
+                "name": "$zabbix_server"
+              },
+              "item": {
+                "name": "All"
+              },
+              "itemFilter": "Zabbix busy",
+              "refId": "A"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Zabbix busy processes",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "percent",
+            "short"
+          ]
+        }
+      ],
+      "showTitle": true,
+      "title": "Zabbix performance"
+    }
+  ],
+  "time": {
+    "from": "now-30m",
+    "to": "now"
+  },
+  "timepicker": {
+    "collapse": false,
+    "enable": true,
+    "notice": false,
+    "now": true,
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "status": "Stable",
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ],
+    "type": "timepicker"
+  },
+  "templating": {
+    "list": [
+      {
+        "allFormat": "glob",
+        "current": {
+          "text": "zabbix3.lab.local",
+          "value": "zabbix3.lab.local"
+        },
+        "datasource": null,
+        "includeAll": false,
+        "multi": true,
+        "multiFormat": "glob",
+        "name": "zabbix_server",
+        "options": [
+          {
+            "selected": true,
+            "text": "zabbix3.lab.local",
+            "value": "zabbix3.lab.local"
+          }
+        ],
+        "query": "Zabbix servers.*",
+        "refresh_on_load": false,
+        "regex": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "annotations": {
+    "enable": false,
+    "list": [
+      {
+        "datasource": "grafana-zabbix.org",
+        "enable": false,
+        "host": "Zabbix server",
+        "iconColor": "#C0C6BE",
+        "iconSize": 20,
+        "lineColor": "rgba(255, 96, 96, 0.592157)",
+        "name": "Processor load",
+        "showLine": true,
+        "trigger": "*processor load*"
+      },
+      {
+        "datasource": "grafana-zabbix.org",
+        "enable": true,
+        "iconColor": "#C0C6BE",
+        "iconSize": 20,
+        "lineColor": "rgba(255, 96, 96, 0.592157)",
+        "name": "ZabbixConfigChange",
+        "showLine": true,
+        "showOkEvents": true,
+        "trigger": "/etc/zabbix/zabbix_server.conf has been changed*"
+      }
+    ]
+  },
+  "refresh": false,
+  "schemaVersion": 7,
+  "version": 8,
+  "links": []
+}
